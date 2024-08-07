@@ -14,14 +14,27 @@ class AppWriteClient {
 
   static final database = Databases(AppWriteClient.instance.client);
 
-  Future<User> getUser() async {
-    Account account = Account(client);
+  Future createTask() {
+    
+    Future result = AppWriteClient.database.createDocument(
+      databaseId: "taskmanager",
+      collectionId: '66b300520011cf176a0d',
+      documentId: 'task_0001',
+      data: {
+        "task_id": "task_0001",
+        "task_name": "Hackathon",
+        "created_by": "Test User"
+      },
+    );
 
-    try {
-      final currentUser = await account.get();
-      return currentUser;
-    } on AppwriteException catch (e) {
-      throw e.response.toString();
-    }
+    result.then((response) {
+      print("success");
+      print(response);
+    }).catchError((error) {
+      print("error");
+      print(error.response);
+    });
+
+    return result;
   }
 }

@@ -1,6 +1,7 @@
 // task_view.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_managment/core/service/appwrite_client.dart';
 import 'task_controller.dart';
 
 class TaskView extends GetView<TaskController> {
@@ -29,8 +30,9 @@ class TaskView extends GetView<TaskController> {
         );
       }),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: () async {
           // Get.to(() => AddTaskView());
+          await AppWriteClient.instance.createTask();
         },
         tooltip: 'Add Task',
         child: const Icon(Icons.add),
