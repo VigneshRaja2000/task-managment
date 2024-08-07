@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_managment/app_path.dart';
 import 'login_controller.dart';
 
 class LoginPage extends GetView<LoginController> {
@@ -16,10 +17,12 @@ class LoginPage extends GetView<LoginController> {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text('You are logged in'),
           ElevatedButton(
             // onPressed: controller.logout,
-            onPressed: () {},
+            onPressed: () {
+              controller.signIn();
+              // Get.toNamed(AppPaths.tasks);
+            },
             child: const Text('Sign in with google'),
           ),
         ],
