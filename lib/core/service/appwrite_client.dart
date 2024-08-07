@@ -21,9 +21,8 @@ class AppWriteClient {
       collectionId: '66b300520011cf176a0d',
       documentId: 'task_0001',
       data: {
-        "task_id": "task_0001",
+        "task_id": ID.unique(),
         "task_name": "Hackathon",
-        "created_by": "Test User"
       },
     );
 
