@@ -14,16 +14,13 @@ class AppWriteClient {
 
   static final database = Databases(AppWriteClient.instance.client);
 
-  Future createTask() {
+  Future createTask(task, documentId) {
     
     Future result = AppWriteClient.database.createDocument(
       databaseId: "taskmanager",
       collectionId: '66b300520011cf176a0d',
-      documentId: 'task_0001',
-      data: {
-        "task_id": ID.unique(),
-        "task_name": "Hackathon",
-      },
+      documentId: documentId,
+      data: task,
     );
 
     result.then((response) {

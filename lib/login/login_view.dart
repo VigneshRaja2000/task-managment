@@ -57,27 +57,28 @@ class LoginPage extends GetView<LoginController> {
               const SizedBox(height: defaultPadding / 2),
               ElevatedButton(
                 onPressed: () async {
-                  Map user = {
-                    "userId": ID.unique(),
-                    "email": controller.emailController.text,
-                    "password": controller.passwordController.text
-                  };
-                  await controller.signUp(user).then((val) {
-                    print(val);
-                    if (val['success']) {
-                      Get.toNamed(AppPaths.tasks);
-                    } else {
-                      // Show Snackbar
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('User already exists'),
-                          duration: Duration(
-                              seconds:
-                                  2), // Duration the Snackbar will be shown
-                        ),
-                      );
-                    }
-                  });
+                  // Map user = {
+                  //   "userId": ID.unique(),
+                  //   "email": controller.emailController.text,
+                  //   "password": controller.passwordController.text
+                  // };
+                  // await controller.signUp(user).then((val) {
+                  //   print(val);
+                  //   if (val['success']) {
+                  //     Get.toNamed(AppPaths.tasks);
+                  //   } else {
+                  //     // Show Snackbar
+                  //     ScaffoldMessenger.of(context).showSnackBar(
+                  //       SnackBar(
+                  //         content: Text('User already exists'),
+                  //         duration: Duration(
+                  //             seconds:
+                  //                 2), // Duration the Snackbar will be shown
+                  //       ),
+                  //     );
+                  //   }
+                  // });
+                   Get.toNamed(AppPaths.tasks);
                 },
                 child: Text("Sign Up".toUpperCase()),
               ),
