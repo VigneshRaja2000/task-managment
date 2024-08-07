@@ -15,8 +15,6 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
-        name: AppPaths.tasks,
-        page: () => const TaskView(),
-        binding: TaskBinding()),
+        name: AppPaths.tasks, page: () => TasksView(), binding: TaskBinding()),
   ];
 }

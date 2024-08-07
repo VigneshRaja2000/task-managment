@@ -39,6 +39,7 @@ dependencies:
   dart_appwrite: null
   device_info_plus: 9.1.2
   package_info_plus: 5.0.1
+  uuid: ^4.0.0
 
 dev_dependencies:
   flutter_test:
