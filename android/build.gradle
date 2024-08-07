@@ -17,4 +17,3 @@ tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
 
-implementation("io.appwrite:sdk-for-android:2.0.0")
